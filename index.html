@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rags2Richs Removal & Hauling LLC</title>
+  <meta name="description" content="Premium junk removal, property cleanouts, furniture hauling, and market-ready turnover services in Bucks County, Burlington County, Mercer County, Philadelphia, and surrounding areas." />
+  <style>
+    :root{
+      --bg:#0a0a0b;
+      --bg2:#121214;
+      --panel:#151517;
+      --panel2:#1a1a1d;
+      --gold:#d7b26d;
+      --gold2:#f0d39b;
+      --text:#f5f1e8;
+      --muted:#bdb5a6;
+      --line:rgba(215,178,109,.25);
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --radius:24px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(215,178,109,.08), transparent 28%),
+        radial-gradient(circle at top left, rgba(215,178,109,.05), transparent 24%),
+        linear-gradient(180deg,var(--bg) 0%, #0c0c0d 40%, #101012 100%);
+      line-height:1.5;
+    }
+    h1,h2,h3,h4{
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.02;
+      letter-spacing:.02em;
+      margin:0 0 .6rem;
+    }
+    p{margin:.35rem 0 0}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:84px 0}
+    .eyebrow{
+      display:inline-flex; gap:10px; align-items:center;
+      color:var(--gold2); text-transform:uppercase; font-size:.78rem;
+      letter-spacing:.22em; margin-bottom:16px;
+    }
+    .eyebrow::before{
+      content:""; width:44px; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent);
+      display:block;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 22px; border-radius:999px; font-weight:700; letter-spacing:.02em;
+      transition:.25s ease; border:1px solid var(--line); cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, #b68b43, var(--gold2));
+      color:#121212;
+      border:none;
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,.02);
+      backdrop-filter: blur(6px);
+    }
+    .btn:hover{transform:translateY(-2px); filter:saturate(1.05)}
+    .nav{
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter: blur(12px);
+      background:rgba(10,10,11,.72);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .nav-inner{
+      width:min(var(--max), calc(100% - 32px)); margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between; gap:20px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px; min-width:0;
+    }
+    .brand img{width:48px; height:48px; object-fit:cover; border-radius:999px; border:1px solid var(--line)}
+    .brand-title{font-weight:800; letter-spacing:.06em; text-transform:uppercase; font-size:.95rem}
+    .brand-sub{font-size:.78rem; color:var(--muted)}
+    .nav-links{display:flex; gap:18px; color:#ddd2c0; font-size:.95rem}
+    .nav-links a:hover{color:var(--gold2)}
+    .hero{
+      position:relative; min-height:92vh; display:grid; place-items:center; overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(4,4,5,.85) 0%, rgba(4,4,5,.55) 40%, rgba(4,4,5,.65) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45)),
+        url("F84A72C1-C312-4377-8BE6-36C5FD67DDAB.jpeg") center/cover no-repeat;
+      transform:scale(1.03);
+      filter:saturate(.95) contrast(1.03);
+    }
+    .hero-grid{
+      position:relative; z-index:2;
+      width:min(var(--max), calc(100% - 32px));
+      display:grid; grid-template-columns: 1.12fr .88fr; gap:34px; align-items:center;
+      padding:72px 0;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.07);
+      box-shadow:var(--shadow);
+      border-radius:28px; padding:24px;
+      backdrop-filter: blur(10px);
+    }
+    .hero h1{
+      font-size:clamp(3rem, 7vw, 6rem);
+      text-transform:uppercase;
+      text-shadow:0 8px 30px rgba(0,0,0,.35);
+    }
+    .hero h1 .gold{color:var(--gold2)}
+    .hero p.lead{
+      font-size:clamp(1.05rem, 2vw, 1.3rem);
+      color:#e7dccb; max-width:760px;
+      margin-top:18px;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:28px}
+    .stat-row{
+      margin-top:28px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+    }
+    .stat{
+      border:1px solid var(--line); border-radius:18px; padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+    }
+    .stat strong{
+      display:block; font-size:1.35rem; color:var(--gold2)
+    }
+    .hero-media{
+      display:grid; gap:18px;
+    }
+    .hero-logo{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px; padding:18px; box-shadow:var(--shadow);
+    }
+    .hero-logo img{
+      border-radius:22px; border:1px solid var(--line);
+      aspect-ratio:1/1; object-fit:cover; width:100%;
+    }
+    .mini-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .mini-grid .card{
+      position:relative; overflow:hidden; min-height:180px;
+      border-radius:24px; border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow);
+      background:var(--panel);
+    }
+    .mini-grid .card img{width:100%; height:100%; object-fit:cover}
+    .mini-grid .card .overlay{
+      position:absolute; inset:auto 0 0 0; padding:16px;
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,.75));
+      font-weight:700;
+    }
+
+    .two-col{
+      display:grid; grid-template-columns:1fr 1fr; gap:28px;
+      align-items:start;
+    }
+    .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius); padding:28px; box-shadow:var(--shadow);
+    }
+    .service-grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px;
+    }
+    .service{
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:22px; padding:22px; min-height:170px;
+      position:relative; overflow:hidden;
+    }
+    .service::after{
+      content:""; position:absolute; right:-40px; top:-40px; width:120px; height:120px;
+      background:radial-gradient(circle, rgba(215,178,109,.18), transparent 60%);
+    }
+    .service .icon{
+      width:48px;height:48px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(215,178,109,.18), rgba(215,178,109,.05));
+      border:1px solid var(--line); color:var(--gold2); font-size:1.25rem; margin-bottom:14px;
+    }
+    .service h3{font-size:1.15rem}
+    .service p{color:var(--muted); font-size:.95rem}
+
+    .split-showcase{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:24px;
+      margin-top:28px;
+    }
+    .case{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:26px; overflow:hidden; background:var(--panel); box-shadow:var(--shadow);
+    }
+    .case .imgs{
+      display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:320px;
+    }
+    .case .imgs figure{
+      margin:0; position:relative; overflow:hidden;
+    }
+    .case .imgs img{width:100%; height:100%; object-fit:cover}
+    .tag{
+      position:absolute; top:14px; left:14px; padding:8px 12px; border-radius:999px;
+      font-size:.82rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase;
+      box-shadow:var(--shadow);
+    }
+    .before{background:#251a1a; color:#ffb1a7; border:1px solid rgba(255,120,90,.18)}
+    .after{background:#162118; color:#bbf0b6; border:1px solid rgba(120,255,130,.15)}
+    .case .content{padding:20px 22px 24px}
+    .case .content p{color:var(--muted)}
+
+    .gallery{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:24px;
+    }
+    .gallery a{
+      display:block; border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.07);
+      box-shadow:var(--shadow); position:relative; min-height:240px;
+    }
+    .gallery a img{width:100%; height:100%; object-fit:cover; transition:transform .4s ease}
+    .gallery a:hover img{transform:scale(1.04)}
+    .gallery a span{
+      position:absolute; left:12px; bottom:12px; right:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.72));
+      padding-top:36px; font-weight:700; color:#fff;
+    }
+
+    .trust-grid{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px;
+    }
+    .bullet{
+      display:flex; gap:14px; align-items:flex-start;
+      padding:16px 18px; border-radius:18px;
+      border:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.012));
+    }
+    .bullet .check{
+      width:30px; height:30px; border-radius:999px; flex:none;
+      display:grid; place-items:center; font-weight:900;
+      background:linear-gradient(135deg, #a78040, var(--gold2)); color:#111;
+    }
+
+    .quote-card{
+      padding:28px;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at top right, rgba(215,178,109,.14), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+    }
+    .quote-form{
+      display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px;
+    }
+    .quote-form .full{grid-column:1/-1}
+    input, textarea, select{
+      width:100%; border-radius:16px; border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03); color:var(--text);
+      padding:14px 16px; font:inherit; outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input::placeholder, textarea::placeholder{color:#b5ab99}
+    .small{font-size:.86rem; color:var(--muted)}
+    .referral{
+      padding:34px; border-radius:30px; overflow:hidden; position:relative;
+      background:
+        radial-gradient(circle at right top, rgba(240,211,155,.2), transparent 28%),
+        linear-gradient(135deg, #16120d, #101012 55%, #151516);
+      border:1px solid var(--line); box-shadow:var(--shadow);
+    }
+    .referral-badge{
+      display:inline-flex; align-items:center; gap:12px;
+      font-size:clamp(2rem, 5vw, 4rem);
+      color:var(--gold2); font-weight:800;
+    }
+
+    .contact-card{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:22px;
+      align-items:stretch;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border:1px solid rgba(255,255,255,.08); border-radius:32px; padding:24px; box-shadow:var(--shadow);
+    }
+    .contact-poster{
+      border-radius:24px; overflow:hidden; border:1px solid var(--line);
+      min-height:420px;
+    }
+    .contact-poster img{width:100%;height:100%;object-fit:cover}
+    .info-list{
+      display:grid; gap:14px; margin-top:18px;
+    }
+    .info-item{
+      border:1px solid rgba(255,255,255,.06);
+      padding:16px 18px; border-radius:18px;
+      background:rgba(255,255,255,.02);
+    }
+
+    .sticky-bar{
+      position:fixed; bottom:18px; left:50%; transform:translateX(-50%);
+      display:flex; gap:12px; z-index:1200;
+      background:rgba(10,10,11,.82); backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.08); border-radius:999px; padding:10px;
+      box-shadow:var(--shadow);
+    }
+    .sticky-bar a{white-space:nowrap}
+    footer{
+      padding:34px 0 70px; color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+    .footer-grid{
+      display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid, .two-col, .contact-card{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .split-showcase{grid-template-columns:1fr}
+    }
+    @media (max-width: 720px){
+      .nav-links{display:none}
+      .hero{min-height:auto}
+      .hero-grid{padding:44px 0 60px}
+      .stat-row, .trust-grid, .quote-form, .service-grid{grid-template-columns:1fr}
+      .mini-grid, .gallery{grid-template-columns:1fr}
+      .case .imgs{grid-template-columns:1fr}
+      .sticky-bar{
+        left:12px; right:12px; transform:none; justify-content:stretch;
+      }
+      .sticky-bar a{flex:1}
+      .contact-poster{min-height:280px}
+      .section{padding:66px 0}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <img src="796F3709-C3F1-4047-B7B5-5B43F0E78B07.jpeg" alt="Rags2Richs logo" />
+        <div>
+          <div class="brand-title">Rags2Richs Removal & Hauling</div>
+          <div class="brand-sub">Premium Cleanouts • Junk Removal • Property Turnovers</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#transformations">Before &amp; After</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#areas">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn primary" href="tel:2155953601">Call Now</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Luxury Contractor Style Website</div>
+        <h1>From <span class="gold">Rags</span> to <span class="gold">Riches</span> — We Clear It All</h1>
+        <p class="lead">
+          Premium junk removal, furniture hauling, full property cleanouts, and market-ready turnover services
+          for homeowners, landlords, investors, realtors, and property managers.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#quote">Get Free Estimate</a>
+          <a class="btn secondary" href="tel:2155953601">Call 215-595-3601</a>
+          <a class="btn secondary" href="mailto:rags2richsservices@gmail.com">Email Us</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <strong>Same Day</strong>
+            Fast response for urgent cleanouts and property turnover needs.
+          </div>
+          <div class="stat">
+            <strong>Full Service</strong>
+            Debris, furniture, yard waste, interior cleanouts, and more.
+          </div>
+          <div class="stat">
+            <strong>Market Ready</strong>
+            We remove the mess so the property shows better and rents faster.
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-logo">
+          <img src="796F3709-C3F1-4047-B7B5-5B43F0E78B07.jpeg" alt="Rags2Richs Removal & Hauling LLC logo">
+        </div>
+        <div class="mini-grid">
+          <div class="card">
+            <img src="42BFFB97-5E74-4264-9016-F8E1A0A1A596.jpeg" alt="Cleaned out driveway after junk removal">
+            <div class="overlay">Cleaned • Cleared • Ready</div>
+          </div>
+          <div class="card">
+            <img src="2CC50F1D-21DA-4DEE-A861-6E12457861ED.jpeg" alt="Furniture haul-out with trailer">
+            <div class="overlay">Furniture Removal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="panel">
+        <div class="eyebrow">The Offer</div>
+        <h2>We don’t just remove junk — we make properties market ready.</h2>
+        <p style="color:var(--muted); max-width:60ch">
+          Whether it’s a leftover debris pile, an estate cleanout, an eviction, a pre-sale clean-up,
+          or a full furniture haul-away, Rags2Richs helps turn problem spaces into clean, usable spaces.
+        </p>
+      </div>
+      <div class="panel">
+        <div class="eyebrow">Built To Convert</div>
+        <h2>Designed like a premium contractor brand.</h2>
+        <p style="color:var(--muted); max-width:60ch">
+          This demo page uses your real job photos and a black-and-gold luxury look to make the company
+          feel more expensive, more trusted, and more established.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="eyebrow">Services</div>
+      <h2 style="font-size:clamp(2rem,4vw,3.8rem)">Full Service Junk Removal &amp; Property Cleanouts</h2>
+      <p style="max-width:72ch; color:var(--muted)">
+        Built for homeowners, landlords, flippers, realtors, contractors, and property managers who need
+        reliable haul-away service with strong before-and-after results.
+      </p>
+
+      <div class="service-grid">
+        <article class="service">
+          <div class="icon">🏠</div>
+          <h3>House &amp; Estate Cleanouts</h3>
+          <p>Full house cleanouts, estate cleanups, downsizing removals, and inherited property clearing.</p>
+        </article>
+        <article class="service">
+          <div class="icon">🧱</div>
+          <h3>Construction Debris Removal</h3>
+          <p>Wood scraps, demo material, carpet, drywall, trim, and renovation leftovers hauled away fast.</p>
+        </article>
+        <article class="service">
+          <div class="icon">🛋️</div>
+          <h3>Furniture Removal</h3>
+          <p>Dressers, tables, chairs, cabinets, mattresses, and bulky items loaded and removed.</p>
+        </article>
+        <article class="service">
+          <div class="icon">🚪</div>
+          <h3>Property Turnovers</h3>
+          <p>Great for rentals, pre-sale prep, evictions, foreclosures, and getting units move-in ready.</p>
+        </article>
+        <article class="service">
+          <div class="icon">🌿</div>
+          <h3>Yard &amp; Exterior Cleanup</h3>
+          <p>Brush, branches, outside clutter, patio waste, and driveway debris cleared out neatly.</p>
+        </article>
+        <article class="service">
+          <div class="icon">⚡</div>
+          <h3>Same Day / Next Day Availability</h3>
+          <p>Fast turnaround for urgent jobs when you need the mess gone without delays.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="transformations">
+    <div class="wrap">
+      <div class="eyebrow">Before &amp; After</div>
+      <h2 style="font-size:clamp(2rem,4vw,3.8rem)">Proof that sells the service</h2>
+      <p style="max-width:72ch; color:var(--muted)">
+        Your photos tell the exact story customers want to see: cluttered space, heavy debris, loaded trailer,
+        then a clean open area ready for the next step.
+      </p>
+
+      <div class="split-showcase">
+        <article class="case">
+          <div class="imgs">
+            <figure>
+              <img src="CFFCC734-6E50-457B-B2A7-CD0B12C3F9CC.jpeg" alt="Before: construction debris and wood pile">
+              <span class="tag before">Before</span>
+            </figure>
+            <figure>
+              <img src="42BFFB97-5E74-4264-9016-F8E1A0A1A596.jpeg" alt="After: cleared concrete area after debris removal">
+              <span class="tag after">After</span>
+            </figure>
+          </div>
+          <div class="content">
+            <h3>Construction Debris Cleanup</h3>
+            <p>Wood scraps, mixed material, bins, and side-yard mess removed to open the space back up.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="imgs">
+            <figure>
+              <img src="7DACE762-E794-4BEF-A212-3BC8533EE5D8.jpeg" alt="Before: covered carport with carpet and debris">
+              <span class="tag before">Before</span>
+            </figure>
+            <figure>
+              <img src="F84A72C1-C312-4377-8BE6-36C5FD67DDAB.jpeg" alt="After: empty driveway and clean carport">
+              <span class="tag after">After</span>
+            </figure>
+          </div>
+          <div class="content">
+            <h3>Driveway &amp; Carport Cleanout</h3>
+            <p>Bulky carpet, broken material, yard debris, and scattered waste hauled off for a cleaner look.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="imgs">
+            <figure>
+              <img src="0594C9F7-BE95-4406-97DD-27FCD7CE3821.jpeg" alt="Before: furniture arranged for pickup">
+              <span class="tag before">Before</span>
+            </figure>
+            <figure>
+              <img src="93E6F17B-17B1-48F4-A3D9-AE622DD427C2.jpeg" alt="After: furniture being loaded and removed">
+              <span class="tag after">Loaded</span>
+            </figure>
+          </div>
+          <div class="content">
+            <h3>Furniture Haul-Out</h3>
+            <p>Multiple pieces staged, loaded, and cleared from the property with a professional trailer setup.</p>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="imgs">
+            <figure>
+              <img src="3F61F2D3-02A4-4EB3-8AE1-1396DE007A0C.jpeg" alt="Before: room with blue carpet and wood paneling">
+              <span class="tag before">Before</span>
+            </figure>
+            <figure>
+              <img src="1452EB59-A9BC-4C8E-AC41-E2C7AE7046C6.jpeg" alt="After: room cleaned out with carpet removed">
+              <span class="tag after">After</span>
+            </figure>
+          </div>
+          <div class="content">
+            <h3>Interior Room Cleanout</h3>
+            <p>Old material removed and room emptied out to make the property easier to renovate or refresh.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="wrap">
+      <div class="eyebrow">Visual Gallery</div>
+      <h2 style="font-size:clamp(2rem,4vw,3.6rem)">Real jobs. Real proof. Real cleanouts.</h2>
+      <div class="gallery">
+        <a href="E9961869-FA1B-4B88-BE71-C3D474FB0B25.jpeg"><img src="E9961869-FA1B-4B88-BE71-C3D474FB0B25.jpeg" alt="Debris pile by brick wall"><span>Heavy Debris & Wood Pile</span></a>
+        <a href="681A43C3-35BB-4889-ADCF-2AF5862843F7.jpeg"><img src="681A43C3-35BB-4889-ADCF-2AF5862843F7.jpeg" alt="Outdoor patio area after cleanup"><span>Patio Area Ready Again</span></a>
+        <a href="2CC50F1D-21DA-4DEE-A861-6E12457861ED.jpeg"><img src="2CC50F1D-21DA-4DEE-A861-6E12457861ED.jpeg" alt="Trailer being loaded with furniture"><span>Furniture Pickup Setup</span></a>
+        <a href="93E6F17B-17B1-48F4-A3D9-AE622DD427C2.jpeg"><img src="93E6F17B-17B1-48F4-A3D9-AE622DD427C2.jpeg" alt="Furniture around trailer ready for haul"><span>Bulk Furniture Removal</span></a>
+        <a href="EFFDD335-EE81-491A-949D-AD3BBE518979.jpeg"><img src="EFFDD335-EE81-491A-949D-AD3BBE518979.jpeg" alt="Interior living room before cleanout"><span>Interior Property Cleanup</span></a>
+        <a href="BC7FDB41-59BA-4405-BD9F-85CA0797DA74.jpeg"><img src="BC7FDB41-59BA-4405-BD9F-85CA0797DA74.jpeg" alt="Bedroom before cleanout"><span>Bedroom Before Refresh</span></a>
+        <a href="1719D9A3-D823-4D50-B13D-90065C3277F0.jpeg"><img src="1719D9A3-D823-4D50-B13D-90065C3277F0.jpeg" alt="Room with red carpet before removal"><span>Full Room Cleanout</span></a>
+        <a href="1452EB59-A9BC-4C8E-AC41-E2C7AE7046C6.jpeg"><img src="1452EB59-A9BC-4C8E-AC41-E2C7AE7046C6.jpeg" alt="Room after cleanout"><span>Cleared Out &amp; Ready</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="panel">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 style="font-size:clamp(2rem,4vw,3rem)">Built for landlords, homeowners, realtors, and investors</h2>
+        <div class="trust-grid">
+          <div class="bullet"><div class="check">✓</div><div><strong>Fast Turnaround</strong><br><span style="color:var(--muted)">Same day / next day availability when possible.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>Professional Presentation</strong><br><span style="color:var(--muted)">A brand that looks premium and trustworthy.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>Free On-Site Estimates</strong><br><span style="color:var(--muted)">Easy quote requests by phone, text, or email.</span></div></div>
+          <div class="bullet"><div class="check">✓</div><div><strong>Licensed &amp; Insured</strong><br><span style="color:var(--muted)">Promoted as a reliable, established service provider.</span></div></div>
+        </div>
+      </div>
+
+      <div class="referral">
+        <div class="eyebrow">Referral Program</div>
+        <h2>Earn when you refer work</h2>
+        <div class="referral-badge">Up to 10% Referral Bonus</div>
+        <p style="color:var(--muted); max-width:58ch">
+          Refer a client and earn cash or service credit. Great for realtors, property managers, landlords,
+          contractors, and anyone who regularly sees junk removal opportunities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quote">
+    <div class="wrap">
+      <div class="quote-card">
+        <div class="eyebrow">Free Estimate</div>
+        <h2 style="font-size:clamp(2rem,4vw,3.3rem)">Get a quote fast</h2>
+        <p style="color:var(--muted); max-width:70ch">
+          This form is styled as a premium front end demo. You can later connect it to Formspree, Gmail, a webhook,
+          Google Sheets, or your CRM.
+        </p>
+
+        <form class="quote-form" onsubmit="event.preventDefault(); document.getElementById('quoteMsg').textContent='Thanks — this demo form is ready to be connected to your email or CRM.';">
+          <input type="text" placeholder="Your name" aria-label="Your name">
+          <input type="tel" placeholder="Phone number" aria-label="Phone number">
+          <input type="email" placeholder="Email address" aria-label="Email address">
+          <select aria-label="Service needed">
+            <option>Service needed</option>
+            <option>Junk removal</option>
+            <option>Furniture removal</option>
+            <option>Property cleanout</option>
+            <option>Construction debris</option>
+            <option>Estate cleanout</option>
+            <option>Turnover / make-ready</option>
+          </select>
+          <textarea class="full" placeholder="Tell us what needs to go..."></textarea>
+          <div class="full" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+            <button class="btn primary" type="submit">Request Estimate</button>
+            <span id="quoteMsg" class="small"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="areas">
+    <div class="wrap panel">
+      <div class="eyebrow">Service Area</div>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem)">Serving key counties and surrounding areas</h2>
+      <div class="trust-grid" style="margin-top:24px">
+        <div class="bullet"><div class="check">•</div><div><strong>Bucks County</strong><br><span style="color:var(--muted)">Residential and investment property cleanouts.</span></div></div>
+        <div class="bullet"><div class="check">•</div><div><strong>Burlington County</strong><br><span style="color:var(--muted)">Junk hauling, furniture pickup, and debris removal.</span></div></div>
+        <div class="bullet"><div class="check">•</div><div><strong>Mercer County</strong><br><span style="color:var(--muted)">Turnovers, move-outs, and property-ready cleanup.</span></div></div>
+        <div class="bullet"><div class="check">•</div><div><strong>Philadelphia</strong><br><span style="color:var(--muted)">Fast response for city and nearby jobs.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap contact-card">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2 style="font-size:clamp(2rem,4vw,3.4rem)">Need junk gone today?</h2>
+        <p style="color:var(--muted); max-width:62ch">
+          Call or text to schedule a quote, send photos, or talk through the job. This layout is built to feel
+          expensive and trustworthy so the company looks bigger, stronger, and easier to hire.
+        </p>
+        <div class="info-list">
+          <div class="info-item"><strong>Phone</strong><br><a href="tel:2155953601" style="color:var(--gold2)">215-595-3601</a></div>
+          <div class="info-item"><strong>Email</strong><br><a href="mailto:rags2richsservices@gmail.com" style="color:var(--gold2)">rags2richsservices@gmail.com</a></div>
+          <div class="info-item"><strong>Core Offers</strong><br>Junk removal • furniture hauling • property cleanouts • turnover service</div>
+        </div>
+        <div class="hero-actions" style="margin-top:22px">
+          <a class="btn primary" href="tel:2155953601">Call Now</a>
+          <a class="btn secondary" href="mailto:rags2richsservices@gmail.com">Send Email</a>
+        </div>
+      </div>
+      <div class="contact-poster">
+        <img src="A9EE2A02-1456-4FC3-A52E-B6F3830EE088.jpeg" alt="Rags2Richs flyer">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <strong style="color:var(--gold2)">Rags2Richs Removal &amp; Hauling LLC</strong><br>
+        Premium junk removal and property turnover style demo website.
+      </div>
+      <div>Built as a single-file HTML demo.</div>
+    </div>
+  </footer>
+
+  <div class="sticky-bar">
+    <a class="btn primary" href="tel:2155953601">Call 215-595-3601</a>
+    <a class="btn secondary" href="#quote">Get Estimate</a>
+  </div>
+</body>
+</html>
